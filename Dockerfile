@@ -1,12 +1,8 @@
-# Use a base image that has docker-compose
-FROM docker:latest
+# Use the official n8n image
+FROM n8nio/n8n:latest
 
-# Install a base OS and dependencies
-RUN apk add --no-cache py3-pip bash
-RUN pip3 install docker-compose
-
-# Copy your compose file into the image
-COPY docker-compose.yml .
-
-# Command to run docker-compose
-CMD ["docker-compose", "up"]
+# Set only NON-SECURE environment variables here
+ENV DB_TYPE=postgresdb
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+ENV N8N_RUNNERS_ENABLED=true
+# The base image has the correct CMD. Do NOT add the key here.
