@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    dockerfilePath: Dockerfile
+    buildCommand: ""
+    startCommand: n8n start
+    envVars:
+      - key: DB_TYPE
+        value: mysqldb
+      - key: DB_MYSQLDB_DATABASE
+        value: test
+      - key: DB_MYSQLDB_HOST
+        value: gateway01.eu-central-1.prod.aws.tidbcloud.com
+      - key: DB_MYSQLDB_PORT
+        value: 4000
+      - key: DB_MYSQLDB_USER
+        value: dEXG5DU43c68xUs.root
+      - key: DB_MYSQLDB_PASSWORD
+        value: 700H1vpRz60P7g8V
+      - key: DB_MYSQLDB_SSL
+        value: 'true'
+      - key: DB_MYSQLDB_SSL_CA
+        value: /etc/ssl/certs/ca-certificates.crt
+      - key: N8N_ENCRYPTION_KEY
+        value: whc20DEqUvG+28CUVDDLRJZOHnr32ktg 
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: 'true'
