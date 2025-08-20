@@ -1,1 +1,1 @@
-from FROM n8nio/n8n:latest
+docker.n8n.io/n8nio/n8n:latest
