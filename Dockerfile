@@ -1,8 +1,15 @@
-# Use the official n8n image
-FROM n8nio/n8n:latest
+# Basic Authentication (CRITICAL for public deployment)
+N8N_BASIC_AUTH_ACTIVE=true
+N8N_BASIC_AUTH_USER=admin
+N8N_BASIC_AUTH_PASSWORD=Adn8naxel
 
-# Set only NON-SECURE environment variables here
-ENV DB_TYPE=postgresdb
-ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-ENV N8N_RUNNERS_ENABLED=true
-# The base image has the correct CMD. Do NOT add the key here.
+# Encryption Key (32 characters)
+N8N_ENCRYPTION_KEY=HdaQtPizCEBc3GTQNnnYlKgMUFf7lOJp
+
+# Webhook Configuration
+N8N_PROTOCOL=https
+WEBHOOK_URL=https://n8n-2-0la7.onrender.com/
+
+# General Settings
+N8N_PORT=5678
+GENERIC_TIMEZONE=UTC
