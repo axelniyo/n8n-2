@@ -1,15 +1,11 @@
-# Basic Authentication (CRITICAL for public deployment)
-N8N_BASIC_AUTH_ACTIVE=true
-N8N_BASIC_AUTH_USER=admin
-N8N_BASIC_AUTH_PASSWORD=Adn8naxel
+# Use the official n8n image
+FROM n8nio/n8n:latest
 
-# Encryption Key (32 characters)
-N8N_ENCRYPTION_KEY=HdaQtPizCEBc3GTQNnnYlKgMUFf7lOJp
+# Set only non-sensitive environment variables here
+ENV N8N_PORT=5678
+ENV GENERIC_TIMEZONE=UTC
 
-# Webhook Configuration
-N8N_PROTOCOL=https
-WEBHOOK_URL=https://n8n-2-0la7.onrender.com/
+# Expose the n8n port
+EXPOSE 5678
 
-# General Settings
-N8N_PORT=5678
-GENERIC_TIMEZONE=UTC
+# The base image has the correct CMD
